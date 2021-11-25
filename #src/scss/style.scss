@@ -1,0 +1,317 @@
+@import "null";
+/* -------------------------fONTScONV-------------------- */
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+// @import "icons";
+@import "fonts";
+@import "header";
+@import "adaptivefont";
+
+/* ------------------ibg-------------------- */
+// @import "ibg";
+
+/* ------------------Font-------------------- */
+
+$fontFamily: "ofont";
+$fontSize: 15;
+/*----------Переменные------------------- */
+
+$minwidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 1107;
+$md1: $maxWidthContainer + 12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #677585;
+$contentColor: #b71833;
+/*----------Переменные------------------- */
+body {
+  color: $mainColor;
+  font-size: $fontSize + px;
+  font-family: $fontFamily, sans-serif;
+  letter-spacing: 2px;
+  &._lock {
+    overflow: hidden;
+    @media (max-width: md3+px) {
+      // width: 100%;
+      // position: fixed;
+      // overflow: hidden;
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &.loaded {
+  }
+}
+._container {
+  max-width: $maxWidthContainer + 30 + px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: #fff;
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+  }
+
+  &__menu {
+    // margin-left: 74px;
+  }
+}
+
+.menu {
+  padding: 5px 0;
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      margin-left: 30px;
+      // @media (max-width: 1080px) {
+      //   margin-left: 25px;
+      // }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: #000;
+
+    letter-spacing: 0.45px;
+    font-size: 15px;
+
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 0.45px;
+    color: #000;
+  }
+}
+
+.mainblock {
+  padding-top: 78px;
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__slider {
+  }
+
+  &__text {
+  }
+}
+
+// .slider__item-text {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 9;
+//   h3 {
+//     font-size: 60px;
+//     color: #fff;
+//   }
+// }
+// .text-mainblock {
+//   &__slider {
+//   }
+// }
+// .slider-text {
+//   &__item {
+//   }
+// }
+// .item-text {
+//   position: relative;
+//   &__title {
+//     position: absolute;
+//     max-width: 350px;
+//   }
+
+//   &__main {
+//   }
+// }
+// /* Слайдер */
+// .slide-content {
+// }
+// .slick-slide {
+//   margin: 0 30px;
+// }
+// /* the parent */
+// .slick-list {
+//   margin: 0 -30px;
+// }
+// .slick-slider {
+// }
+// /* Слайдер запущен */
+// .slick-slider.slick-initialized {
+// }
+// /* Слайдер с точками */
+// .slick-slider.slick-dotted {
+// }
+// /* Ограничивающая оболочка */
+// .slick-list {
+//   overflow: hidden;
+// }
+// /* Лента слайдов */
+// .slick-track {
+//   display: flex;
+// }
+// /* Слайд */
+// .slick-slide {
+// }
+// .slick-dots {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   top: 80%;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   margin: 0 auto;
+// }
+// .slick-dots li {
+//   list-style: none;
+//   margin: 0 10px;
+// }
+// /* Активная точка */
+// .slick-dots li.slick-active button {
+//   background-color: #fff;
+// }
+// /* Элемент точки */
+// .slick-dots li button {
+//   font-size: 0;
+//   width: 10px;
+//   height: 10px;
+
+//   border-radius: 50%;
+//   background: linear-gradient(
+//       45deg,
+//       rgba(255, 255, 255, 0.0001) 0%,
+//       rgba(255, 255, 255, 0.0278722) 5.56%,
+//       rgba(255, 255, 255, 0.327291) 65.45%,
+//       rgba(255, 255, 255, 0.45487) 90.97%,
+//       rgba(255, 255, 255, 0.478303) 95.66%,
+//       rgba(255, 255, 255, 0.5) 100%
+//     ),
+//     #677585;
+//   background-blend-mode: overlay, normal;
+// }
+
+// .slider {
+//   position: relative;
+
+//   .slick-arrow.slick-prev {
+//     left: 140px;
+//     // background: url("../img/icons/prevarrow.svg") 0 0 no-repeat;
+//   }
+//   .slick-arrow.slick-next {
+//     right: 140px;
+//   }
+//   .slick-arrow {
+//     background-color: #fff;
+//     margin-top: -25px;
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 50%;
+//     font-size: 0;
+//     position: absolute;
+//     top: 50%;
+//     z-index: 10;
+//   }
+// }
+
+// /* Слайд активный (показывается) */
+// .slick-slide.slick-active {
+// }
+// /* Слайд основной */
+// .slick-slide.slick-current {
+// }
+// /* Слайд по центру */
+// .slick-slide.slick-center {
+// }
+// /* Клонированный слайд */
+// .slick-slide.slick-cloned {
+// }
+// /* Стрелка */
+// .slick-arrow {
+// }
+// /* Стрелка влево */
+
+// /* Стрелка вправо */
+// .slick-arrow.slick-next {
+// }
+// /* Стрелка не активная */
+// .slick-arrow.slick-disabled {
+// }
+// /* Точки (булиты) */
+// .text {
+//   position: relative;
+//   &__image {
+//   }
+
+//   &__text {
+//   }
+// }
+// .item-slider__content {
+//   position: relative;
+
+// }
+// .slider {
+//   &__item {
+//   }
+
+//   &__item-text {
+
+//     position: absolute;
+//     top: 50%; /* position the top  edge of the element at the middle of the parent */
+//     left: 50%; /* position the left edge of the element at the middle of the parent */
+
+//     transform: translate(
+//       -50%,
+//       -50%
+//     ); /* This is a shorthand of
+//                                          translateX(-50%) and translateY(-50%) */
+//     color: #fff;
+
+//     h3 {
+//     }
+//   }
+// }
+// .item-slider {
+//   &__image {
+//   }
+// }
